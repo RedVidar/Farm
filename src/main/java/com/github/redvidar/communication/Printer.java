@@ -3,6 +3,7 @@ package com.github.redvidar.communication;
 public class Printer {
 
 	public void printIntPrompt() {
+
 		System.out.println("Give int and confirm with Enter");
 	}
 
@@ -19,11 +20,10 @@ public class Printer {
 		System.out.println("" + word);
 	}
 
-	public void printAmountOfAnimals(int x, int y, int[][] z) {
-		int amount = z[x][y];
-		System.out.println(amount);
-	}
-	public void printInt(Object x){
+
+	public void printInt(Object x) {
 		System.out.println(x);
 	}
+
+
 }

@@ -4,56 +4,33 @@ import com.github.redvidar.communication.Printer;
 
 public class Farm {
 	Printer printer = new Printer();
-	public String animal;
-	public int sheep;
-	public int rabbit;
-	public int pig;
-	public int cow;
-	public int horse;
-	public int smallDog;
-	public int bigDog;
+	Animal animal = new Animal();
+	Animal[] arr;
 
 
-	public Object newPlayerFarm() {
-		sheep = 20;
-		rabbit = 20;
-		pig = 20;
-		cow = 20;
-		horse = 20;
-		smallDog = 5;
-		bigDog = 3;
-		return this;
+	public Farm() {
+		arr = new Animal[7];
+		arr[0] = new Animal();
+		this.animal.setName("rabbit");
+		arr[1] = new Animal();
+		this.animal.setName("sheep");
+		arr[2] = new Animal();
+		this.animal.setName("pig");
+		arr[3] = new Animal();
+		this.animal.setName("cow");
+		arr[4] = new Animal();
+		this.animal.setName("horse");
+		arr[5] = new Animal();
+		this.animal.setName("smallDog");
+		arr[6] = new Animal();
+		this.animal.setName("bigDog");
+
 	}
 
-	public void showFarm(Object farm) {
-		printer.printInt(this.rabbit);
-		printer.printInt(this.sheep);
-		printer.printInt(this.pig);
-		printer.printInt(this.cow);
-		printer.printInt(this.horse);
-		printer.printInt(this.smallDog);
-		printer.printInt(this.bigDog);
+public void showFarm(Farm[] farmToSchow){
+	for (int i = 0; i < 7; i++) {
+		printer.printWord(farmToSchow[i].animal.getName());
+		printer.printInt(farmToSchow[i].animal.getAmount());
 	}
-
-	public void addSheep(int x) {
-		this.sheep = this.sheep + x;
-	}
-	//1-królik
-	//2-owca
-	//3-świnia
-	//4-krowa
-	//5-qń
-	//6-mpies
-	//7-dpies
-	/*public int[][] newFarm() {
-		int[][] mainFarm = {{1, 2, 3, 4, 5, 6, 7}, {20, 20, 20, 20, 20, 20, 5}};
-		return mainFarm;
-	}
-
-	public int[][] newPlayerFarm() {
-		int[][] mainFarm = {{1, 2, 3, 4, 5, 6, 7}, {0, 0, 0, 0, 0, 0, 0}};
-		return mainFarm;
-	}
-	*/
-
+}
 }

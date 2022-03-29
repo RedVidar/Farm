@@ -11,13 +11,9 @@ public class Preparer {
 	int numberOfPlayers;
 	Player[] arr;
 	String name;
-	Farm farm = new Farm();
 
 	public void prepare() {
-//		int[][] mainFarm = farm.newFarm();
-		Object mainFarm = farm.newPlayerFarm();
-		farm.addSheep(3);
-		farm.showFarm(mainFarm);
+
 		printer.printWord("Number of players:");
 		printer.printIntPrompt();
 		numberOfPlayers = collector.readInt();
@@ -26,13 +22,12 @@ public class Preparer {
 			printer.printWord("Player name");
 			name = collector.readString();
 			arr[i] = new Player(name);
-			printer.printWord(name);
-//			printer.printAmountOfAnimals(1,2,mainFarm);
+		}
+		for (int i = 0; i < numberOfPlayers; i++) {
+			printer.printWord(arr[i].getName());
 		}
 
 	}
 
-	public Object givePlayers(){
-		return arr;
-	}
+
 }
