@@ -2,7 +2,7 @@ package com.github.redvidar.communication;
 
 import java.util.Scanner;
 
-public class Collector {
+public class ConsoleScanner {
 	private final Scanner scanner = new Scanner(System.in);
 
 	public double readDouble() {

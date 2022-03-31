@@ -1,29 +1,34 @@
 package com.github.redvidar.communication;
 
+import com.github.redvidar.objects.Animal;
+import com.github.redvidar.objects.Player;
+
+import java.util.List;
+
 public class Printer {
+
 
 	public void printIntPrompt() {
 
 		System.out.println("Give int and confirm with Enter");
 	}
 
-	public void printCharPrompt() {
-		System.out.println("Give char and confirm with Enter");
-	}
-
-	public void printRoundMenu() {
-		System.out.println("1. Exchange cards");
-		System.out.println("2. Dice roll");
-	}
 
 	public void printWord(String word) {
 		System.out.println("" + word);
 	}
 
 
-	public void printInt(Object x) {
-		System.out.println(x);
+	public void printPlayerList(List<Player> players) {
+		players.forEach(player -> {
+			System.out.println("Player:" + player.getName());
+		});
 	}
 
+	public void printFarm(List<Animal> animals) {
+		animals.forEach(animal -> {
+			System.out.println("Animal:" + animal.getName() + "Amount:" + animal.getAmount());
+		});
+	}
 
 }

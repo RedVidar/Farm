@@ -3,7 +3,7 @@ package com.github.redvidar.objects;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Farm {
+public class Farm  {
 	List<Animal> animals;
 
 
@@ -18,7 +18,7 @@ public class Farm {
 		animals.add(new Animal("bigDog"));
 	}
 
-	public Farm(int animal) {
+	public Farm(boolean isEmpty) {
 		animals = new ArrayList<>();
 		animals.add(new Animal("rabbit",20));
 		animals.add(new Animal("sheep",20));
@@ -29,8 +29,5 @@ public class Farm {
 		animals.add(new Animal("bigDog",10));
 	}
 
-	void printFarm(List<Animal> animals) {
-		animals.forEach(animal -> {
-			System.out.println("Animal:" + animal.getName() + "Amount:" + animal.getAmount());});
-	}
+
 }
