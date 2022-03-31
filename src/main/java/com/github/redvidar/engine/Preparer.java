@@ -5,29 +5,36 @@ import com.github.redvidar.communication.Printer;
 import com.github.redvidar.objects.Farm;
 import com.github.redvidar.objects.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Preparer {
+
 	Printer printer = new Printer();
 	Collector collector = new Collector();
 	int numberOfPlayers;
-	Player[] arr;
+	List<Player> players;
 	String name;
+	Player player = new Player();
+	Farm mainFarm = new Farm();
 
 	public void prepare() {
-
+		mainFarm = new Farm(2);
 		printer.printWord("Number of players:");
 		printer.printIntPrompt();
 		numberOfPlayers = collector.readInt();
-		arr = new Player[numberOfPlayers];
+		players = new ArrayList<>();
 		for (int i = 0; i < numberOfPlayers; i++) {
 			printer.printWord("Player name");
 			name = collector.readString();
-			arr[i] = new Player(name);
+			players.add(new Player(name));
 		}
-		for (int i = 0; i < numberOfPlayers; i++) {
-			printer.printWord(arr[i].getName());
-		}
+		player.printPlayerList(players);
 
 	}
 
+	public List<Player> getPlayerList() {
+		return players;
+	}
 
 }

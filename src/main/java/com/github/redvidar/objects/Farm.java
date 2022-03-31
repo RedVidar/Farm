@@ -1,36 +1,36 @@
 package com.github.redvidar.objects;
 
-import com.github.redvidar.communication.Printer;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Farm {
-	Printer printer = new Printer();
-	Animal animal = new Animal();
-	Animal[] arr;
+	List<Animal> animals;
 
 
 	public Farm() {
-		arr = new Animal[7];
-		arr[0] = new Animal();
-		this.animal.setName("rabbit");
-		arr[1] = new Animal();
-		this.animal.setName("sheep");
-		arr[2] = new Animal();
-		this.animal.setName("pig");
-		arr[3] = new Animal();
-		this.animal.setName("cow");
-		arr[4] = new Animal();
-		this.animal.setName("horse");
-		arr[5] = new Animal();
-		this.animal.setName("smallDog");
-		arr[6] = new Animal();
-		this.animal.setName("bigDog");
-
+		animals = new ArrayList<>();
+		animals.add(new Animal("rabbit"));
+		animals.add(new Animal("sheep"));
+		animals.add(new Animal("pig"));
+		animals.add(new Animal("cow"));
+		animals.add(new Animal("horse"));
+		animals.add(new Animal("smallDog"));
+		animals.add(new Animal("bigDog"));
 	}
 
-public void showFarm(Farm[] farmToSchow){
-	for (int i = 0; i < 7; i++) {
-		printer.printWord(farmToSchow[i].animal.getName());
-		printer.printInt(farmToSchow[i].animal.getAmount());
+	public Farm(int animal) {
+		animals = new ArrayList<>();
+		animals.add(new Animal("rabbit",20));
+		animals.add(new Animal("sheep",20));
+		animals.add(new Animal("pig",20));
+		animals.add(new Animal("cow",20));
+		animals.add(new Animal("horse",10));
+		animals.add(new Animal("smallDog",10));
+		animals.add(new Animal("bigDog",10));
 	}
-}
+
+	void printFarm(List<Animal> animals) {
+		animals.forEach(animal -> {
+			System.out.println("Animal:" + animal.getName() + "Amount:" + animal.getAmount());});
+	}
 }

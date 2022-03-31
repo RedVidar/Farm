@@ -4,14 +4,15 @@ public class Animal {
 	private int amount;
 	private String name;
 
-	public void creteAnimal(String type, int howMany) {
-		this.name = type;
+	public Animal(String name) {
+		this.name = name;
+	}
+
+	public Animal(String name, int howMany) {
+		this.name = name;
 		this.amount = howMany;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public void setAmount(int amount) {
 		this.amount = amount;
