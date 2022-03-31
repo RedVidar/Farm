@@ -17,7 +17,6 @@ public class Player {
 	}
 
 
-
 	public List<Animal> getFarm() {
 		return this.farm.animals;
 	}

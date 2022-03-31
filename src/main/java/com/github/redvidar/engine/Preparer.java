@@ -11,7 +11,6 @@ public class Preparer {
 
 	private Printer printer = new Printer();
 	private ConsoleScanner collector = new ConsoleScanner();
-	private int numberOfPlayers;
 	private List<Player> players;
 	private Farm mainFarm;
 
@@ -19,7 +18,7 @@ public class Preparer {
 		mainFarm = new Farm(true);
 		printer.printWord("Number of players:");
 		printer.printIntPrompt();
-		numberOfPlayers = collector.readInt();
+		int numberOfPlayers = collector.readInt();
 		players = new ArrayList<>();
 		for (int i = 0; i < numberOfPlayers; i++) {
 			printer.printWord("Player name");
