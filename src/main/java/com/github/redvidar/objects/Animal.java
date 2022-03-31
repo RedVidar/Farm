@@ -1,6 +1,7 @@
 package com.github.redvidar.objects;
 
 public class Animal {
+
 	private int amount;
 	private String name;
 
@@ -20,4 +21,10 @@ public class Animal {
 	public int getAmount() {
 		return amount;
 	}
+
+	public void addAmount(int howMany) {
+		this.amount = this.amount + howMany;
+	}
+
+	;
 }
