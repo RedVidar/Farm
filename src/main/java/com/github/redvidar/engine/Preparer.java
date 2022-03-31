@@ -9,12 +9,11 @@ import java.util.List;
 
 public class Preparer {
 
-	Printer printer = new Printer();
-	ConsoleScanner collector = new ConsoleScanner();
-	int numberOfPlayers;
-	List<Player> players;
-	String name;
-	Farm mainFarm;
+	private Printer printer = new Printer();
+	private ConsoleScanner collector = new ConsoleScanner();
+	private int numberOfPlayers;
+	private List<Player> players;
+	private Farm mainFarm;
 
 	public void prepare() {
 		mainFarm = new Farm(true);
@@ -24,7 +23,7 @@ public class Preparer {
 		players = new ArrayList<>();
 		for (int i = 0; i < numberOfPlayers; i++) {
 			printer.printWord("Player name");
-			name = collector.readString();
+			String name = collector.readString();
 			players.add(new Player(name));
 			printer.printFarm(players.get(i).getFarm());
 		}

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Player {
 	private String name;
-	Farm farm = new Farm();
+	private Farm farm = new Farm();
 
 
 	public Player(String name) {
