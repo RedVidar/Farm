@@ -4,6 +4,7 @@ import com.github.redvidar.communication.ConsoleScanner;
 import com.github.redvidar.communication.Printer;
 import com.github.redvidar.objects.Farm;
 import com.github.redvidar.objects.Player;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class Preparer {
 	private ConsoleScanner collector = new ConsoleScanner();
 	private List<Player> players;
 	private Farm mainFarm;
+
 
 	public void prepare() {
 		mainFarm = new Farm(true);
